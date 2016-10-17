@@ -1,21 +1,14 @@
-/**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.swiper{
+	display: flex;
+	height: 100vh;
 }
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.swiper-item-1 {
+	flex: 1;
+	background-color: red;
 }
-
-.userinfo-nickname {
-  color: #aaa;
+.swiper-item-2 {
+	background-color: yellow;
 }
-
-.usermotto {
-  margin-top: 200px;
+.swiper-item-3 {
+	background-color: green;
 }
