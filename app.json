@@ -19,13 +19,19 @@
     "backgroundColor": "#f9f9f9",    
     "list": [{
       "pagePath": "pages/index/index",
-      "text": "首页"
+      "text": "首页",
+      "iconPath": "images/index.png",
+      "selectedIconPath": "images/index-actived.png"
     },{
       "pagePath": "pages/collection/collection",
-      "text": "收藏"
+      "text": "收藏",
+      "iconPath": "images/collection.png",
+      "selectedIconPath": "images/collection-actived.png"      
       },{
         "pagePath": "pages/my/my",
-        "text": "我的"
+        "text": "我的",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my-actived.png"        
         }]
   },
   "networkTimeout": {
@@ -36,3 +42,4 @@
   },
   "debug": true  
 }
+
