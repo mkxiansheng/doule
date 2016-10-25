@@ -56,3 +56,8 @@ navigator {
 	font-size: 14px;
 	line-height: 150%;
 }
+.body-img {
+	margin-top: 8px;
+	display: block; 
+	width: 100%;
+}

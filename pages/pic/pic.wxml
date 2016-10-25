@@ -1,3 +1,5 @@
+<!-- 趣图 -->
+<import src="../../template/rec_index.wxml" />
 <view class="nav">
 	<navigator url="../index/index">
 		<text class="nav-list">推荐</text>
@@ -10,7 +12,7 @@
 	</navigator>
 </view>
 
-<view>
+<!-- <view>
 	<scroll-view class="scroll-box" scroll-y="true" upper-threshold="50" lower-threshold="50" >
 		<view wx:for="{{req}}" class="list-item">
 			<view class="item-header">
@@ -26,4 +28,10 @@
 			</view>
 		</view>
 	</scroll-view>
+</view> -->
+
+<view>
+	<scroll class="scroll-box" scroll-y="true" upper-threshold="50" lower-threshold="50">
+		<template is="pic_tpl" data="{{item}}" wx:for="{{req}}" />
+	</scroll>
 </view>
