@@ -16,6 +16,7 @@ navigator {
 }
 .item-header {
 	overflow: hidden;
+	position: relative;	
 }
 .header-img {
 	float: left;
@@ -60,4 +61,12 @@ navigator {
 	margin-top: 8px;
 	display: block; 
 	width: 100%;
+}
+/*收藏小图标*/
+.col {
+	position: absolute;
+	top: 5px;
+	right: 0;
+	width: 15px;
+	height: 15px;
 }
