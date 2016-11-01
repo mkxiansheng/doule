@@ -8,7 +8,7 @@
 			<text class="header-name">逗比</text>
 			<text class="header-time">{{item.updatetime}}</text>
 			<view>
-				<image class="col" src="../../images/collection.png"></image>
+				<image class="col" src="{{item.col_url}}" bindtap="collection"></image>
 			</view>			
 		</view>
 		<view class="item-body">
