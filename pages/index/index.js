@@ -186,6 +186,10 @@ Page({
   				list[i].col_url = false;
   			}else{
 	  			list[i].col_url = true;
+          wx.setStorage({
+            key: 'wx_req',
+            data: list[i]
+          })          
   			}
   		}
   	}
