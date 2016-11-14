@@ -184,12 +184,13 @@ Page({
   			console.log(list[i].col_url)
   			if (list[i].col_url) {
   				list[i].col_url = false;
+  				wx.removeStorageSync('wx_req')
   			}else{
 	  			list[i].col_url = true;
-          wx.setStorage({
-            key: 'wx_req',
-            data: list[i]
-          })          
+	        	wx.setStorage({
+	            	key: 'wx_req',
+	            	data: list[i]
+	        	})          
   			}
   		}
   	}
