@@ -8,13 +8,14 @@ Page({
   },
   onLoad () {
 
-  	var list = []
-  	var wx_req = wx.getStorageSync('wx_req')
-  	list.push(wx_req)
-  	this.setData({
-  		dec: '',
-  		req: list
-  	})
+    var that = this;
+
+    app.getClt(function(collectionMsg){
+      that.setData({
+       dec: '',
+       req: collectionMsg
+      })
+    })
 
   },	
 
