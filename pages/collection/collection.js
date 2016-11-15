@@ -11,10 +11,12 @@ Page({
     var that = this;
 
     app.getClt(function(collectionMsg){
-      that.setData({
-       dec: '',
-       req: collectionMsg
-      })
+      if (collectionMsg.length) {
+        that.setData({
+         dec: '',
+         req: collectionMsg
+        })
+      }
     })
 
   },	

@@ -187,10 +187,7 @@ Page({
   				wx.removeStorageSync('wx_req')
   			}else{
 	  			list[i].col_url = true;
-	        	wx.setStorage({
-	            	key: 'wx_req',
-	            	data: list[i]
-	        	})          
+				app.setClt(list[i]);       
   			}
   		}
   	}
