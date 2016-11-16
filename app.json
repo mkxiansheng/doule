@@ -4,7 +4,9 @@
     "pages/joke/joke",
     "pages/pic/pic",
     "pages/collection/collection",
-    "pages/my/my"
+    "pages/add/add",
+    "pages/my/my",
+    "pages/setting/setting"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -19,20 +21,29 @@
     "backgroundColor": "#f9f9f9",    
     "list": [{
       "pagePath": "pages/index/index",
-      "text": "首页",
       "iconPath": "images/index.png",
       "selectedIconPath": "images/index-actived.png"
-    },{
+    },
+    {
       "pagePath": "pages/collection/collection",
-      "text": "收藏",
       "iconPath": "images/collection.png",
       "selectedIconPath": "images/collection-actived.png"      
-      },{
-        "pagePath": "pages/my/my",
-        "text": "我的",
-        "iconPath": "images/my.png",
-        "selectedIconPath": "images/my-actived.png"        
-        }]
+    },    
+    {
+      "pagePath": "pages/add/add",
+      "iconPath": "images/add.png",
+      "selectedIconPath": "images/add-actived.png"      
+    },
+    {
+      "pagePath": "pages/my/my",
+      "iconPath": "images/my.png",
+      "selectedIconPath": "images/my-actived.png"        
+    },
+    {
+      "pagePath": "pages/setting/setting",
+      "iconPath": "images/setting.png",
+      "selectedIconPath": "images/setting-actived.png"        
+    }]
   },
   "networkTimeout": {
     "request": 10000,
