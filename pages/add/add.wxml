@@ -1,11 +1,3 @@
-<view class="my-box">
-	<view class="my-header">
-		<text>{{name}}</text>
-	</view>
-	<view class="my-body">
-		<image class="body-img" src="{{pic_url}}"></image>
-	</view>
-	<view class="my-footer">
-		<text>{{github}}</text>
-	</view>
+<view>
+	<text>{{pageName}}</text>
 </view>

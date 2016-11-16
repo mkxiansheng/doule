@@ -3,9 +3,7 @@
 var app = getApp()
 Page({
   data: {
-    name: 'mk先生',
-    pic_url: '../../images/my-code.png',
-    github: 'https://github.com/mkxiansheng/doule'
+    pageName: '设置'
   },
   onLoad: function () {
 
