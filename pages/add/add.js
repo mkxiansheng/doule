@@ -3,7 +3,6 @@
 var app = getApp()
 Page({
   data: {
-    pageName: '添加'
   },
   onLoad: function () {
 
