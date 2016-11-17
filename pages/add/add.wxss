@@ -1,5 +1,5 @@
 .add_box {
-	padding: 0 10rpx;
+	padding: 0 20rpx;
 }
 .add_bt_box {
 	margin: 40rpx 0;
@@ -41,7 +41,7 @@ textarea {
 .footer {
 	margin-top: 20rpx;
 	background-color: #eee;
-	padding: 20rpx 10rpx;
+	padding: 20rpx 20rpx;
 }
 .add_img {
 	width: 32rpx;
