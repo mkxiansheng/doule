@@ -1,6 +1,9 @@
 //index.js
 //获取应用实例
-var app = getApp()
+const app = getApp()
+
+const API_URL = 'http://localhost:4466/api/pic';
+
 Page({
   data: {
   	req: []
@@ -9,13 +12,14 @@ Page({
   scrollUpData: function(e){
   	console.log('scrollUpData')
   	var that = this
-  	app.addReq(function(req){
-  		if (req.length) {
-  			that.setData({
-  				req: req
-  			})
-  		}
-  	})
+
+    app.fetchApi (API_URL,(err,data) => {
+      that.setData({
+        req: data
+      })
+      console.log('updata');
+      console.log('updata--'+data[0].content);
+    })      
   	
   },
   //TODO 上拉加载
@@ -88,14 +92,15 @@ Page({
   },
 
   onLoad () {
+
   	var that = this
-  	app.addReq(function(req){
-  		if (req.length) {
-  			that.setData({
-  				req: req
-  			})
-  		}
-  	})
+
+    app.fetchApi (API_URL,(err,data) => {
+      that.setData({
+        req: data
+      })
+    })   
+
   }
 })
 
