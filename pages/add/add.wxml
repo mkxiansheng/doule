@@ -4,22 +4,15 @@
 		<button class="submit" type="primary" size="mini" bindtap="addNew">发送</button>
 	</view>
 	<textarea placeholder="分享新鲜事" auto-focus auto-height placeholder-style="color:#9e9e9e;" bindblur="textContent" />
-	<!--
-	<view class="pic_box">
+	
+	<view class="pic_box" wx:if="{{ispic}}">
 		<view class="pic_list">
-			<image class="pic_list_img" src="../../images/add.png"></image>
-		</view>
-		<view class="pic_list">
-			<image class="pic_list_img" src="../../images/add.png"></image>
-		</view>
-		<view class="pic_list">
-			<image class="pic_list_img" src="../../images/add.png"></image>
-		</view>		
+			<image class="pic_list_img" src="{{pic}}"></image>
+		</view>	
 	</view>
-	-->
+	
 </view>
-<!--
+
 <view class="footer">
-	<image class="add_img" src="../../images/add.png"></image>
+	<image class="add_img" src="../../images/add.png" bindtap="addPic"></image>
 </view>
--->

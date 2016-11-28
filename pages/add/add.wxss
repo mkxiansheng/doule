@@ -15,7 +15,6 @@ textarea {
 	width: 100%;
 }
 .pic_box {
-	display: none;
 	margin: 40rpx 0;
 	overflow: hidden;
 	display: flex;
