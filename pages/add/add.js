@@ -103,9 +103,11 @@ Page({
           name: 'logo',
           success: function(res){
             var data = res.data
-            // var datas = JSON.parse(data);
-            // console.log(datas.imgUrl);
-            var picUrl = 'http://localhost:4466/'+data
+            var datas = JSON.parse(data);
+            console.log(datas.imgUrl);
+            var path = datas.imgUrl
+            path = path.replace(/\\/g, "/");
+            var picUrl = 'http://localhost:4466/'+path
             that.setData({
               ispic: true,
               pic : picUrl
