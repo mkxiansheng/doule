@@ -6,8 +6,25 @@ const API_URL = 'http://localhost:4466/api/pic';
 
 Page({
   data: {
+    actived: 0,
   	req: []
   },
+  //tab
+  tabHome: function(){
+    this.setData({
+      actived: 0
+    })
+  },
+  tabJoke: function(){
+    this.setData({
+      actived: 1
+    })
+  },
+  tabPic: function(){
+    this.setData({
+      actived: 2
+    })
+  },  
   //下拉更新
   scrollUpData: function(e){
   	console.log('scrollUpData')

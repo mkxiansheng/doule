@@ -3,15 +3,13 @@
 <import src="../../template/rec_index.wxml" />
 
 <view class="nav">
-	<navigator>
-		<text class="nav-list act">推荐</text>
-	</navigator>
-	<navigator url="../joke/joke">
-		<text class="nav-list">段子</text>
-	</navigator>
-	<navigator url="../pic/pic">
-		<text class="nav-list">趣图</text>
-	</navigator>
+	<text class="nav-list {{actived == 0 ? 'act' : ''}}" bindtap="tabHome">推荐</text>
+	<text class="nav-list {{actived == 1 ? 'act' : ''}}" bindtap="tabJoke">段子</text>
+	<text class="nav-list {{actived == 2 ? 'act' : ''}}" bindtap="tabPic">趣图</text>
 </view>
 
-<template is="rec_list" data="{{req}}" />
+<!-- <template is="rec_list" data="{{req}}" /> -->
+
+<template wx:if="actived==o" is="rec_list" data="{{req}}" />
+<template wx:if="actived==1" is="joke_tpl" data="{{req}}" />
+<template wx:if="actived==2" is="pic_tpl" data="{{req}}" />
