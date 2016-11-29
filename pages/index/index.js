@@ -7,6 +7,7 @@ const API_URL = 'http://localhost:4466/api/pic';
 Page({
   data: {
     actived: 0,
+    swiperHeight: 0,
   	req: []
   },
   //tab
@@ -23,6 +24,12 @@ Page({
   tabPic: function(){
     this.setData({
       actived: 2
+    })
+  },
+  bindchange: function(e){
+    var that= this
+    that.setData({
+      actived: e.detail.current
     })
   },  
   //下拉更新
@@ -116,6 +123,14 @@ Page({
       that.setData({
         req: data
       })
+    })
+
+    wx.getSystemInfo({
+      success: function(res){
+        that.setData({
+          swiperHeight: res.windowHeight-44
+        })
+      }
     })   
 
   }

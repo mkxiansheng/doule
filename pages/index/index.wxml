@@ -8,8 +8,34 @@
 	<text class="nav-list {{actived == 2 ? 'act' : ''}}" bindtap="tabPic">趣图</text>
 </view>
 
-<!-- <template is="rec_list" data="{{req}}" /> -->
+<swiper current="{{actived}}" duration="300" bindchange="bindchange" style="height:{{swiperHeight}}px">
+	
+	<!-- 全部 -->
+	<swiper-item>
+		<scroll-view>
+			<block>
+				<template is="rec_list" data="{{req}}" />	
+			</block>
+		</scroll-view>
+	</swiper-item>
 
-<template wx:if="actived==o" is="rec_list" data="{{req}}" />
-<template wx:if="actived==1" is="joke_tpl" data="{{req}}" />
-<template wx:if="actived==2" is="pic_tpl" data="{{req}}" />
+	<!-- 段子 -->
+	<swiper-item>
+		<scroll-view>
+			<block>
+				<template is="rec_list" data="{{req}}" />	
+			</block>
+		</scroll-view>
+	</swiper-item>
+
+	<!-- 趣图 -->
+	<swiper-item>
+		<scroll-view>
+			<block>
+				<template is="rec_list" data="{{req}}" />	
+			</block>
+		</scroll-view>
+	</swiper-item>	
+
+
+</swiper>
