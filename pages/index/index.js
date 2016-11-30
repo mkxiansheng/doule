@@ -3,12 +3,16 @@
 const app = getApp()
 
 const API_URL = 'http://localhost:4466/api/pic';
+const API_URL_JOKE = 'http://localhost:4466/api/joke';
+const API_URL_PIC = 'http://localhost:4466/api/pic';
 
 Page({
   data: {
     actived: 0,
     swiperHeight: 0,
-  	req: []
+  	req: [],
+    joke: [],
+    pic: []
   },
   //tab
   tabHome: function(){
@@ -46,6 +50,20 @@ Page({
     })      
   	
   },
+  //下拉更新
+  scrollUpDataJoke: function(e){
+    console.log('scrollUpDataJoke')
+    var that = this
+
+    app.fetchApi (API_URL_JOKE,(err,data) => {
+      that.setData({
+        joke: data
+      })
+      console.log('updata');
+      console.log('updata--'+data[0].content);
+    })      
+    
+  },  
   //TODO 上拉加载
   lower: function(e){
   	console.log('lower')
@@ -124,6 +142,18 @@ Page({
         req: data
       })
     })
+
+    app.fetchApi (API_URL_JOKE,(err,data) => {
+      that.setData({
+        joke: data
+      })
+    })
+
+    app.fetchApi (API_URL_PIC,(err,data) => {
+      that.setData({
+        pic: data
+      })
+    })        
 
     wx.getSystemInfo({
       success: function(res){

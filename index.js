@@ -64,17 +64,11 @@ app.get('/api/collection', function(req,res){
 
 // 添加pic
 app.get('/api/updata/pic', function(req,res){
+  console.log(req.query)
+  var newInfo = req.query;
 	var dbs = db;
 	var collection = dbs.get('pic');
-	collection.insert({
-      "content": "好一部忍辱负重，深入敌后，斗智斗勇，大获全胜的谍战好戏~",
-      "hashId":"607ce18b4bed0d7b0012b66ed201fb02",
-      "unixtime":1418815449,
-      "updatetime":"2014-12-19 10:23:59",
-      "url":"http://mpic.spriteapp.cn/x/640x400/ugc/2016/11/24/58369949b210a_1.jpg",
-      "zan": 1,
-      "cai": 42
-    },function(e,docs){
+	collection.insert(newInfo,function(e,docs){
     	if (e) {
     		console.log(e)
     		var err = {

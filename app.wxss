@@ -43,7 +43,7 @@ navigator {
 	color: #9e9e9e;
 }
 .scroll-box {
-	height: 700px;
+	height: 100%;
 	background-color: #eee;
 }
 .item-body {

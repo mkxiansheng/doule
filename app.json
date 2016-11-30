@@ -1,8 +1,6 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/joke/joke",
-    "pages/pic/pic",
     "pages/collection/collection",
     "pages/add/add",
     "pages/my/my",
