@@ -14,6 +14,10 @@ Page({
     pic: ''
   },
 
+  concel: function(){
+    wx.navigateBack(1)
+  },
+
   addNew: function(){
   	var that = this
   	console.log('in click')
@@ -46,6 +50,16 @@ Page({
           success (res) {
             // callback(null, res.data)
             console.log(res.data)
+            wx.showToast({
+              title: '发布成功',
+              icon: 'success',
+              duration: 2000
+            })
+            setTimeout(function(){
+              wx.navigateTo({
+                url: '../index/index'
+              })
+            },2000)            
           },
           fail (e) {
             callback(e)
@@ -64,6 +78,16 @@ Page({
           success (res) {
             // callback(null, res.data)
             console.log(res.data)
+            wx.showToast({
+              title: '发布成功',
+              icon: 'success',
+              duration: 2000
+            }) 
+            setTimeout(function(){
+              wx.navigateTo({
+                url: '../index/index'
+              })
+            },2000)                           
           },
           fail (e) {
             callback(e)

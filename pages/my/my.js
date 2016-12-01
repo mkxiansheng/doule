@@ -6,7 +6,12 @@ Page({
   	userInfo: {},
     name: 'mk先生',
     pic_url: '../../images/my-code.png',
-    github: 'https://github.com/mkxiansheng/doule'
+    github: 'https://github.com/mkxiansheng/doule',
+    mylist: [{
+    	url: '../../images/add.png',
+    	name: '我的趣事'
+    }
+    ]
   },
   onLoad: function () {
 

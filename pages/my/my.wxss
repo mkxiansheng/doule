@@ -1,21 +1,45 @@
-.my-box {
-	margin: 0 auto;
-	text-align: center;
+page {
+	background-color: #eee;
 }
-.my-footer,
-.my-header {
-	margin: 20px 0;
+.container {
+	
 }
-.my-body {
-	margin: 0 auto;
-	width: 280px;
-	height: 280px;
+.userinfo {
+	height: 120rpx;
+	line-height: 120rpx;
+	margin-top: 20rpx;
+	padding: 0 20rpx;
+	border-top: 1px solid #e5e5e5;
+	border-bottom: 1px solid #e5e5e5;
+	background-color: #fff;
 }
-.body-img {
-	width: 100%;
-	height: 100%;
+.userinfo-avatar {
+	float: left;
+	width: 80rpx;
+	height: 80rpx;
+	margin: 20rpx 0;
 }
-.my-footer {
-	font-size: 12px;
-	color: #9e9e9e;
+.userinfo-nickname {
+	float: left;
+	margin-left: 20rpx;
+	color: #757575;
+}
+.list {
+	margin-top: 30rpx;
+}
+.list-item {
+	height: 60rpx;
+	line-height: 60rpx;
+	border-top: 1px solid #e5e5e5;
+	padding: 0 20rpx;
+}
+.list-item image {
+	float: left;
+	width: 40rpx;
+	height: 40rpx;
+	margin: 10rpx 0;
+}
+.list-item text {
+	float: left;
+	margin-left: 20rpx;
 }
