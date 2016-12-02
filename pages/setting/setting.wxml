@@ -8,4 +8,7 @@
 	<view class="my-footer">
 		<text>{{github}}</text>
 	</view>
+	<view class="my-footer">
+		<text>{{text ? '1' : '2'}}</text>
+	</view>	
 </view>

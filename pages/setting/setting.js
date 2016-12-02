@@ -5,7 +5,8 @@ Page({
   data: {
     name: 'mk先生',
     pic_url: '../../images/my-code.png',
-    github: 'https://github.com/mkxiansheng/doule'
+    github: 'https://github.com/mkxiansheng/doule',
+    text: "false"
   },
   onLoad: function () {
 

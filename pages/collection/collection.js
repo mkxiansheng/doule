@@ -2,7 +2,7 @@
 //获取应用实例
 const app = getApp()
 
-const API_URL = 'http://localhost:4466/api/collection'
+const API_URL = 'http://localhost:4466/api/getcollection'
 
 Page({
   data: {

@@ -5,6 +5,9 @@ const app = getApp()
 const API_URL = 'http://localhost:4466/api/pic';
 const API_URL_JOKE = 'http://localhost:4466/api/joke';
 const API_URL_PIC = 'http://localhost:4466/api/pic';
+const API_URL_ZAN = 'http://localhost:4466/api/zan';
+const API_URL_CAI = 'http://localhost:4466/api/cai';
+const API_URL_COL = 'http://localhost:4466/api/collection';
 
 Page({
   data: {
@@ -81,10 +84,52 @@ Page({
   			console.log(list[i].col_url)
   			if (list[i].col_url) {
   				list[i].col_url = false;
-  				wx.removeStorageSync('wx_req')
+          var newInfo = {
+            "hashId": id,
+            "col_url": false
+          }
+          console.log(this.data.req)          
+          wx.request({
+            url: API_URL_COL,
+            data: newInfo,
+            header: { 'Content-Type': 'application/json' },
+            success (res) {
+              // callback(null, res.data)
+              console.log(res.data)
+              wx.showToast({
+                title: '取消成功',
+                icon: 'success',
+                duration: 2000
+              })         
+            },
+            fail (e) {
+              callback(e)
+            }
+          })  
   			}else{
 	  			list[i].col_url = true;
-				app.setClt(list[i]);       
+          var newInfo = {
+            "hashId": id,
+            "col_url": true
+          }    
+          console.log(this.data.req)                 
+          wx.request({
+            url: API_URL_COL,
+            data: newInfo,
+            header: { 'Content-Type': 'application/json' },
+            success (res) {
+              // callback(null, res.data)
+              console.log(res.data)
+              wx.showToast({
+                title: '谢谢你的收藏',
+                icon: 'success',
+                duration: 2000
+              })         
+            },
+            fail (e) {
+              callback(e)
+            }
+          })            
   			}
   		}
   	}
@@ -102,9 +147,56 @@ Page({
   			if (list[i].iszan) {
   				list[i].iszan = false;
   				list[i].zan = list[i].zan-1;
+          var newInfo = {
+            "hashId": id,
+            "iszan": false,
+            "zan": list[i].zan
+          }  
+          console.log(this.data.req)                   
+          wx.request({
+            url: API_URL_ZAN,
+            data: newInfo,
+            header: { 'Content-Type': 'application/json' },
+            success (res) {
+              // callback(null, res.data)
+              console.log(res.data)
+              wx.showToast({
+                title: '取消赞',
+                icon: 'success',
+                duration: 2000
+              })         
+            },
+            fail (e) {
+              callback(e)
+            }
+          })           
   			}else{
 	  			list[i].iszan = true;
   				list[i].zan = list[i].zan+1;
+          var newInfo = {
+            "hashId": id,
+            "iszan": true,
+            "zan": list[i].zan
+          }
+          console.log(this.data.req)           
+          wx.request({
+            url: API_URL_ZAN,
+            data: newInfo,
+            header: { 'Content-Type': 'application/json' },
+            success (res) {
+              // callback(null, res.data)
+              console.log(res.data)
+              wx.showToast({
+                title: '谢谢你的赞',
+                icon: 'success',
+                duration: 2000
+              })         
+            },
+            fail (e) {
+              callback(e)
+            }
+          })         
+
   			}
   		}
   	}
@@ -122,9 +214,55 @@ Page({
   			if (list[i].iscai) {
   				list[i].iscai = false;
   				list[i].cai = list[i].cai-1;
+          var newInfo = {
+            "hashId": id,
+            "iscai": false,
+            "cai": list[i].cai
+          } 
+          console.log(this.data.req)                    
+          wx.request({
+            url: API_URL_CAI,
+            data: newInfo,
+            header: { 'Content-Type': 'application/json' },
+            success (res) {
+              // callback(null, res.data)
+              console.log(res.data)
+              wx.showToast({
+                title: '脚下留情',
+                icon: 'success',
+                duration: 2000
+              })         
+            },
+            fail (e) {
+              callback(e)
+            }
+          })            
   			}else{
 	  			list[i].iscai = true;
   				list[i].cai = list[i].cai+1;
+          var newInfo = {
+            "hashId": id,
+            "iscai": true,
+            "cai": list[i].cai
+          }     
+          console.log(this.data.req)                
+          wx.request({
+            url: API_URL_CAI,
+            data: newInfo,
+            header: { 'Content-Type': 'application/json' },
+            success (res) {
+              // callback(null, res.data)
+              console.log(res.data)
+              wx.showToast({
+                title: '脚下留情',
+                icon: 'success',
+                duration: 2000
+              })         
+            },
+            fail (e) {
+              callback(e)
+            }
+          })            
   			}
   		}
   	}
@@ -137,11 +275,11 @@ Page({
 
   	var that = this
 
-    app.fetchApi (API_URL,(err,data) => {
-      that.setData({
-        req: data
-      })
-    })
+    // app.fetchApi (API_URL,(err,data) => {
+    //   that.setData({
+    //     req: data
+    //   })
+    // })
 
     app.fetchApi (API_URL_JOKE,(err,data) => {
       that.setData({
@@ -151,8 +289,10 @@ Page({
 
     app.fetchApi (API_URL_PIC,(err,data) => {
       that.setData({
+        req: data,
         pic: data
       })
+      console.log(that.data.req)
     })        
 
     wx.getSystemInfo({

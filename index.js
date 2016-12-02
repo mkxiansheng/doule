@@ -46,20 +46,20 @@ app.get('/api/joke', function(req,res){
 });
 
 // 获取收藏
-app.get('/api/collection', function(req,res){
-	var dbs = db;
-	var collection = dbs.get('collection');
-	collection.find({},{},function(e,docs){
-		if (e) {
-			console.log(e);
-			var err = {
-				err: true
-			}
-            res.end(JSON.stringify(err))
-		}else{
-     		res.end(JSON.stringify(docs))
-		}
-	});
+app.get('/api/getcollection', function(req,res){
+  var dbs = db;
+  var collection = dbs.get('pic');
+  collection.find({"col_url":"true"},function(e,docs){
+    if (e) {
+      console.log(e);
+      var err = {
+        err: true
+      }
+      res.end(JSON.stringify(err))
+    }else{
+      res.end(JSON.stringify(docs))
+    }
+  });
 });
 
 // 添加pic
@@ -100,46 +100,73 @@ app.get('/api/updata/joke', function(req,res){
     })
 });
 
-// 添加收藏
-app.get('/api/updata/collection', function(req,res){
-	var dbs = db;
-	var collection = dbs.get('collection');
-	collection.insert({
-      "content": '女票一直是个女汉子，为了让我在朋友面前有面子，展现她阴柔娇弱的一面，吃夜宵摊时她说：“老公~帮人家拧开这个啤酒瓶盖嘛~”吓得我坐到地上！',
-      "hashId":"607ce06b4bed0d7b0012b66ed201fb02",
-      "unixtime":1418815449,
-      "updatetime":"2014-12-19 10:23:59",
-      "zan": 11,
-      "cai": 2
-    },function(e,docs){
-    	if (e) {
-    		console.log(e)
-    		var err = {
-    			err: true
-    		}
-    		res.end(JSON.stringify(err))
-    	}else{
-    		res.end(JSON.stringify(docs))
-    	}
+//赞
+app.get('/api/zan', function(req,res){
+  console.log(req.query)
+  var newInfo = req.query;
+  var id = newInfo.hashId;
+  var iszan = newInfo.iszan;
+  var zan = newInfo.zan;
+
+  var dbs = db;
+  var collection = dbs.get('pic');
+  collection.update({"hashId":id},{$set:{"zan":zan,"iszan":iszan}},function(e,docs){
+      if (e) {
+        console.log(e)
+        var err = {
+          err: true
+        }
+        res.end(JSON.stringify(err))
+      }else{
+        console.log(docs)
+        res.end(JSON.stringify(docs))
+      }
     })
 });
 
-// 取消收藏
-app.get('/api/del/collection', function(req,res){
-	var dbs = db;
-	var collection = dbs.get('collection');
-	collection.remove({
-      "hashId":"607ce06b4bed0d7b0012b66ed201fb02"
-    },function(e,docs){
-    	if (e) {
-    		console.log(e)
-    		var err = {
-    			err: true
-    		}
-    		res.end(JSON.stringify(err))
-    	}else{
-    		res.end(JSON.stringify(docs))
-    	}
+//踩
+app.get('/api/cai', function(req,res){
+  console.log(req.query)
+  var newInfo = req.query;
+  var id = newInfo.hashId;
+  var iscai = newInfo.iscai;
+  var cai = newInfo.cai;
+
+  var dbs = db;
+  var collection = dbs.get('pic');
+  collection.update({"hashId":id},{$set:{"cai":cai,"iscai":iscai}},function(e,docs){
+      if (e) {
+        console.log(e)
+        var err = {
+          err: true
+        }
+        res.end(JSON.stringify(err))
+      }else{
+        console.log(docs)
+        res.end(JSON.stringify(docs))
+      }
+    })
+});
+//踩
+app.get('/api/collection', function(req,res){
+  console.log(req.query)
+  var newInfo = req.query;
+  var id = newInfo.hashId;
+  var col_url = newInfo.col_url;
+
+  var dbs = db;
+  var collection = dbs.get('pic');
+  collection.update({"hashId":id},{$set:{"col_url":col_url}},function(e,docs){
+      if (e) {
+        console.log(e)
+        var err = {
+          err: true
+        }
+        res.end(JSON.stringify(err))
+      }else{
+        console.log(docs)
+        res.end(JSON.stringify(docs))
+      }
     })
 });
 
