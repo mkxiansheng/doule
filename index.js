@@ -15,7 +15,7 @@ app.use('/',express.static(__dirname));
 app.get('/api/pic', function(req,res){
 	var dbs = db;
 	var collection = dbs.get('pic');
-	collection.find({},{},function(e,docs){
+	collection.find({},{sort: {"updatetime": -1}},function(e,docs){
 		if (e) {
 			console.log(e);
 			var err = {
@@ -32,7 +32,7 @@ app.get('/api/pic', function(req,res){
 app.get('/api/joke', function(req,res){
 	var dbs = db;
 	var collection = dbs.get('joke');
-	collection.find({},{},function(e,docs){
+	collection.find({},{sort: {"updatetime": -1}},function(e,docs){
 		if (e) {
 			console.log(e);
 			var err = {
