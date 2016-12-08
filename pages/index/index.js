@@ -8,6 +8,7 @@ const API_URL_PIC = 'http://localhost:4466/api/pic';
 const API_URL_ZAN = 'http://localhost:4466/api/zan';
 const API_URL_CAI = 'http://localhost:4466/api/cai';
 const API_URL_COL = 'http://localhost:4466/api/collection';
+const API_URL_UPDATA = "http://localhost:4466/api/updata/user";
 
 Page({
   data: {
@@ -307,7 +308,7 @@ Page({
           swiperHeight: res.windowHeight-44
         })
       }
-    })   
+    })
 
   }
 })
