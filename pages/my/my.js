@@ -4,9 +4,6 @@ var app = getApp()
 Page({
   data: {
   	userInfo: {},
-    name: 'mk先生',
-    pic_url: '../../images/my-code.png',
-    github: 'https://github.com/mkxiansheng/doule',
     mylist: [{
     	url: '../../images/add.png',
     	name: '我的趣事'
@@ -22,6 +19,23 @@ Page({
       that.setData({
         userInfo:userInfo
       })
+
+      console.log(userInfo)
+      //TODO 因为无法取到code 所以只用用户名作为标识符了 这是不可取的,只作演示
+      var uname = userInfo.nickName;
+      var gender = userInfo.gender;
+      var avatarUrl = userInfo.avatarUrl;
+      var province = userInfo.province;
+      var city = userInfo.city;
+
+      var user = {
+        "uname" : uname,
+        "gender" : gender,
+        "avatarUrl" : avatarUrl,
+        "province" : province,
+        "city" : city        
+      }
+      console.log(user)
     })   
 
   }

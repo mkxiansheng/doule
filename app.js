@@ -25,34 +25,6 @@ App({
 
   },
 
-  getClt: function (cb) {
-    var that = this
-    typeof cb == "function" && cb(that.globalData.collectionMsg)
-  },
-
-  setClt: function (cb){
-    var that = this
-    var list = that.globalData.collectionMsg;
-    list.push(cb)
-    that.globalData.collectionMsg = list;
-  },
-
-  addReq: function(cd,add){
-
-    var that = this
-    var list = that.globalData.req
-
-    if (add=='add') {
-      list.unshift(cd)
-      this.globalData.req = list
-    }else{
-      typeof cd == 'function' && cd(that.globalData.req)
-    }
-
-    console.log(that.globalData.req)
-
-  },
-
   getUserInfo:function(cb){
     var that = this
     if(this.globalData.userInfo){
@@ -60,7 +32,8 @@ App({
     }else{
       //调用登录接口
       wx.login({
-        success: function () {
+        success: function (res) {
+          console.log(res);
           wx.getUserInfo({
             success: function (res) {
               that.globalData.userInfo = res.userInfo

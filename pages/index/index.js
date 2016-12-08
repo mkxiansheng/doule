@@ -43,13 +43,19 @@ Page({
   scrollUpData: function(e){
   	console.log('scrollUpData')
   	var that = this
-
+    wx.showToast({
+      title: '加载中,请稍后',
+      icon: 'loading',
+      duration: 5000
+    })
     app.fetchApi (API_URL,(err,data) => {
       that.setData({
         req: data
       })
       console.log('updata');
       console.log('updata--'+data[0].content);
+      wx.hideToast();
+      wx.stopPullDownRefresh();
     })      
   	
   },

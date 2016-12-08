@@ -7,9 +7,16 @@ navigator {
 	background-color: #fff;
 	border-bottom: 1px solid #e5e5e5;
 	padding: 0 10px;
+	position: fixed;
+	display: block;
+	top: 0;
+	width: 100%;	
 }
 .nav-list {
 	padding: 13px 20px;
+}
+swiper {
+	margin-top: 90rpx;
 }
 .act {
 	border-bottom: 1px solid #000;
