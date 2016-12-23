@@ -8,8 +8,9 @@ Page({
     mylist: [{
     	url: '../../images/add.png',
     	name: '我的趣事'
-    }
-    ]
+    }],
+    isLogin: false
+
   },
   onLoad: function () {
 

@@ -1,9 +1,7 @@
 page {
 	background-color: #eee;
 }
-.container {
-	
-}
+.container {}
 .userinfo {
 	height: 120rpx;
 	line-height: 120rpx;
@@ -42,4 +40,25 @@ page {
 .list-item text {
 	float: left;
 	margin-left: 20rpx;
+}
+.user {
+	margin-top: 50rpx;
+}
+input {
+	background-color: #fff;
+	height: 90rpx;
+	line-height: 90rpx;
+	font-size: 40rpx;
+	padding-left: 20rpx;
+}
+.line {
+	height: 1rpx;
+	width: 100%;
+	background-color: #eee;
+}
+.show {
+	display: block;
+}
+.hide {
+	display: none;
 }
